@@ -1,0 +1,39 @@
+@import "src/styles";
+.row {
+  display: flex; /* equal height of the children */
+  .col-lg-6 {
+    padding: 1em;
+    border: solid 0;
+    margin: 5px
+  }
+}
+
+.child {
+  flex: 1;
+}
+.row > mat-card {
+  -webkit-transition: all 0.6s ease-in-out;
+  -moz-transition: all 0.6s ease-in-out;
+  -o-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+
+}
+
+.mat-card-title {
+  display: inline;
+  margin-bottom: 8px;
+}
+
+.mat-card-header {
+  display: inline;
+  flex-direction: row;
+}
+
+::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: $color2 !important;
+}
+
+
+::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+  background-color: rgb(64 255 220 / 54%);
+}

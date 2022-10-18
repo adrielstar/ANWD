@@ -1,0 +1,17 @@
+{
+  "/api": {
+    "target": "https://test-kpi-dashboard.ndwcloud.nu",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/casualties": {
+    "target": "http://localhost:3000/",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/municipality": {
+    "target": "http://localhost:3000/",
+    "secure": false,
+    "logLevel": "debug"
+  }
+}

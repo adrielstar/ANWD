@@ -1,0 +1,23 @@
+<div class="row">
+  <mat-card data-card="data" [ngClass]="showChart$ ? 'col-lg-6' : 'col-lg-12'">
+    <mat-card-header>
+      <div class="clearfix">
+        <mat-card-title>Map</mat-card-title>
+        <mat-slide-toggle class="float-end" [checked]="showChart$" #toggles (change)="toggle($event)">
+          {{!showChart$ ?  'Display' : 'Hide'}} chart</mat-slide-toggle>
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+      <app-leaflet (polyClicked)="onChecked($event)" (chartDataVisual)="data($event)"
+                   (changes)="selectedPoly($event)"></app-leaflet>
+    </mat-card-content>
+  </mat-card>
+  <mat-card data-card="data" class="col-lg-6 child" *ngIf="appService.showIncidents.value">
+    <mat-card-header>
+      <mat-card-title>Chart {{ name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <app-charts [mapData]="dataSet"></app-charts>
+    </mat-card-content>
+  </mat-card>
+</div>
