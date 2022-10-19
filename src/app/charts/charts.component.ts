@@ -14,7 +14,6 @@ export class ChartsComponent implements OnInit {
 
   ngOnInit(): void {
     this.initChart();
-    // this.updateChart();
 
     setInterval(() => {
       this.updateChart();
@@ -32,6 +31,8 @@ export class ChartsComponent implements OnInit {
           bottom: 50,
           left: 55
         },
+        showControls: false,
+        noData: 'No data available please select a layer on the map',
         title: {
           enable: true,
           text: 'place of click'
@@ -69,7 +70,6 @@ export class ChartsComponent implements OnInit {
 
   private updateChart() {
     setTimeout(() => {
-      // this.data = [];
       this.data = [{
         key: 'deaths',
         values: this.mapData[0] ? this.mapData[0] : [],

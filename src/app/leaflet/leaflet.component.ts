@@ -27,8 +27,8 @@ export class LeafletComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.initializeMapOptions();
     this.getJoinedData();
+    this.initializeMapOptions();
   }
 
   private initializeMapOptions() {
@@ -78,7 +78,7 @@ export class LeafletComponent implements OnInit {
         }).addTo(this.map);
         const centerPoint: any = [];
         geoJson.eachLayer((layer) => {
-          layer.bindPopup(`<span> ${ this.joinedData[x].name }</span>`);
+          layer.bindPopup(`<h3> ${ this.joinedData[x].name }</h3>`);
           layer.on('click', (e) => {
             this.selectedPolygonData(x);
             this.polyClicked.emit(true);
@@ -104,6 +104,10 @@ export class LeafletComponent implements OnInit {
       color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
+  }
+
+  refreshMap(){
+    this.map.invalidateSize();
   }
 
   private getCenterPointLatLon(arr: any) {
